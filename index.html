@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<title>powa</title>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="powa" content="powa.org.ng">
+	<meta name="description" content="The Police Officers’ Wives Association (POWA) is a non-governmental organization in Nigeria dedicated to the welfare of families of personnel within the Nigeria Police Force. The association focuses on creating social support systems to improve the lives of police families, under the premise that stable home environments contribute to more effective service by police officers.">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">   
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/logo.jpg">
+
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+	
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<!-- Header START -->
+<header class="header-sticky header-absolute" data-bs-theme="dark">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl px-lg-5">
+		<div class="container-fluid">
+			<!-- Logo START -->
+			<a class="navbar-brand me-5" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.jpg" alt="logo" style="height:150">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo.jpg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+					<li class="nav-item"> <a class="nav-link" href="index.html">Home</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">About</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">Programs & Initiatives</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">Leadership</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">Events</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">News</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="#">Gallery</a> </li>
+					<!-- Nav item -->
+					<li class="nav-item"> <a class="nav-link" href="contact.html">Contact us</a> </li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Buttons -->
+			<ul class="nav align-items-center dropdown-hover ms-sm-2">
+				<!-- Dark mode option START -->
+				<li class="nav-item dropdown dropdown-animation">
+					<button class="btn btn-link mb-0 px-2 lh-1" id="bd-theme"
+					type="button"
+					aria-expanded="false"
+					data-bs-toggle="dropdown"
+					data-bs-display="static">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"  class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+						<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+						<use href="#"></use>
+					</svg>
+					</button>
+
+					<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+								<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+									<use href="#"></use>
+								</svg>Light
+							</button>
+						</li>
+						<li class="mb-1">
+							<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+									<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
+									<use href="#"></use>
+								</svg>Dark
+							</button>
+						</li>
+						<li>
+							<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-half fa-fw mode-switch me-1" viewBox="0 0 16 16">
+									<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+									<use href="#"></use>
+								</svg>Auto
+							</button>
+						</li>
+					</ul>
+				</li>
+				<!-- Dark mode option END -->
+
+				<!-- Search -->
+				
+				<!-- Offcanvas cart menu -->
+				<li class="nav-item position-relative ms-2 ms-sm-3 d-none d-sm-block">
+					<a class="btn btn-dark mb-0" href="https://pay.squadco.com/link/9QF4YS">Donate</a>
+				</li>
+
+				<!-- Responsive navbar toggler -->
+				<li class="nav-item">
+					<button class="navbar-toggler ms-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</li>	
+			</ul>
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main Banner START -->
+<section class="pt-0">
+	<!-- Slider START -->
+	<div class="swiper overflow-hidden" data-swiper-options='{
+		"effect": "fade",
+		"speed":"1000",
+		"autoplay":{
+			"delay": 3000, 
+			"disableOnInteraction": false
+		},
+		"pagination":{
+			"el":".swiper-pagination",
+			"clickable":"true"
+		}}'>
+
+		<div class="swiper-wrapper">
+			<!-- Slider item -->
+			<div class="swiper-slide">
+				<div class="card overflow-hidden min-vh-100 rounded-0" style="background:url(assets/images/leadership/HF4ovmEXMAAKfRS.jpeg) no-repeat; background-size:cover; background-position:center;">
+					<!-- Bg overlay -->
+					<div class="bg-overlay bg-linear-overlay"></div>
+		
+					<!-- Card image overlay -->
+					<div class="position-relative z-index-2 d-flex flex-column m-auto h-100 py-9"> 
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-11 col-lg-8 col-xl-7 text-center m-auto">									
+									<!-- Title -->
+									<h1 class="text-white display-4 my-4">Empowering Families,<span class="text-primary">Supporting Service.</span> Strengthening Communities.</h1>
+									<p class="text-white mb-5"> I stand before you with a heart overflowing with gratitude and a deep sense of responsibility. POWA is much more than a social body; we are the backbone behind the badge! We are the silent strength behind the uniform. </p>
+									<a class="btn btn-lg btn-white icon-link icon-link-hover mb-0" href="#">Get started now<i class="bi bi-arrow-right"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- Slider item -->
+			<div class="swiper-slide">
+				<div class="card overflow-hidden min-vh-100 rounded-0" style="background:url(assets/images/leadership/CI0A8439.jpg) no-repeat; background-size:cover; background-position:center;">
+					<!-- Bg overlay -->
+					<div class="bg-overlay bg-linear-overlay"></div>
+		
+					<!-- Content -->
+					<div class="position-relative z-index-2 d-flex flex-column m-auto h-100 py-9"> 
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-11 col-lg-8 mt-auto">
+									<!-- Title -->
+									<h1 class="text-white display-4 mb-4">Better<span class="fw-light"> Police</span> with <span class="fw-light">POWA</span></h1>
+									<p class="text-white mb-5"> Empowering women through leadership and innovation.</p>
+									<a class="btn btn-lg btn-primary icon-link icon-link-hover mb-0" href="#">Explore Our Services<i class="bi bi-arrow-right"></i> </a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+		<!-- Slider Pagination -->
+		<div class="swiper-pagination swiper-pagination-line position-absolute bottom-0 mb-3"></div>
+	</div>	
+	<!-- Slider END -->
+</section>
+<!-- =======================
+Main Banner END -->
+
+<!-- =======================
+About START -->
+<section class="pt-0">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-11 mx-auto">
+				<div class="row g-4 g-lg-5 align-items-center">
+					<!-- Years content -->
+					<div class="col-md-6 col-lg-4 text-center">
+						<div class="icon-xxl bg-primary rounded-circle mx-auto mb-n7" style="width: 150px; height:150px;"></div>
+						<span class="heading-color fw-bold" style="font-size: 6rem; line-height: 1.25;">62</span>
+						<h6 class="w-50 mx-auto">Years of Impactful Service</h6>
+					</div>
+					
+					<!-- Title content -->
+					<div class="col-md-6 col-lg-4">
+						<h6 class="text-body fw-normal">Since 1964</h6>
+						<h3>Preserving the Home Front, Securing the Future.</h3>
+					</div>
+					
+					<!-- Info content -->
+					<div class="col-lg-4">
+						<p class="mb-4">For over six decades, the Police Officers’ Wives Association (POWA) has served as an essential pillar of stability within the Nigeria Police Force barracks. What began as an internal support network has grown into a structured, nationwide social protection agency dedicated to healthcare access, youth scholarship funding, and women-focused micro-investment pipelines.</p>
+						<a href="#" class="btn btn-dark mb-0">Discover Our Legacy</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+About END -->
+
+<!-- =======================
+Services START -->
+
+<!-- =======================
+Services END -->
+
+<!-- =======================
+Why us START -->
+<section class="overflow-hidden pb-0">
+	<div class="container">
+		<div class="row align-items-center">
+			<!-- Image -->
+			<div class="col-lg-6 text-center position-relative mb-5 mb-lg-0">
+				<!-- Image -->
+				<div class="pe-lg-6 pe-xl-8"><img src="assets/images/Olufunmilola-Mutiat-disu.jpg" class="rounded" alt=""></div>
+				<!-- Decoration -->
+				
+			</div>
+
+			<!-- Content -->
+			<div class="col-lg-6 ms-auto">
+				<!-- Title and content -->
+				<h2 class="mb-lg-4">Message From our President</h2>
+				<p style="padding-bottom: 10px;">
+					<i>
+						<small>Speech By Mrs. Olufunmilola Mutiat Disu 23rd National President, Police Officers’ Wives Association (POWA)</small>
+					</i>
+				</p>
+				
+				<p class="mb-lg-4">
+					I stand before you with a heart overflowing with gratitude and a deep sense of responsibility. 
+					As I assume the leadership of this noble association, I am reminded that POWA is much more than a social body;
+					 we are the backbone behind the badge and the silent strength behind the uniform. Our mission for 2026 and beyond is clear: 
+					 we are moving from intention to alliance. Through our POWA CARES initiative, we are institutionalizing compassion.
+					  We are not just providing one-off donations; we are building a sustainable architecture of support that ensures every police 
+					  wife is economically empowered, every police child is academically supported, and every widow is never left to walk alone.
+					   To my sisters in the barracks across all 36 states and the FCT, I say this: your resilience is our inspiration. 
+					   Whether it is through our nationwide healthcare outreaches, our vocational training centers, or our nursing scholarship funds, 
+					   this administration is committed to your total well-being. The police officer protects the nation, but the police officer’s wife 
+					   preserves the home. Together, through unity and faith, 
+					we are securing the future of the Nigeria Police Force family. Join us as we work to make a measurable impact, one family at a time.</p>
+				<a href="portfolio-list.html" class="btn btn-dark mb-0">Explore our projects</a>
+				<hr class="my-4 my-lg-5"> <!-- Divider -->
+
+				<!-- List -->
+				<div class="row">
+					<div class="col-sm-6">
+						<ul class="list-group list-group-borderless">
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Digital Literacy & ICT Training</li>
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Cultural & Skills Exhibition</li>
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>National Command Alliance</li>							
+						</ul>
+					</div>
+
+					<div class="col-sm-6">
+						<ul class="list-group list-group-borderless">
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Tailored Social Protection</li>
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Healthcare Outreaches</li>
+							<li class="list-group-item heading-color fw-normal d-flex mb-0"><i class="bi bi-patch-check text-primary me-2"></i>Micro-Investment Insights</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Why us END -->
+
+<!-- =======================
+Work START -->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container-small text-center mb-4 mb-md-6">
+			<h2>How it works in <span class="text-primary">4</span> easy steps</h2>
+		</div>
+
+		<div class="row step-process">
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-search fa-lg"></i>
+					</div>
+					<h5>Grassroots Identification</h5>
+					<p>State Command Chairpersons work directly with barracks community leaders to identify vulnerable widows, low-cadre police families, and exceptional youth facing immediate financial or medical hardships.</p>
+				</div>
+			</div>
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-bullseye fa-lg"></i>
+					</div>
+					<h5>Needs Assessment</h5>
+					<p>The National Secretariat vets entries against our 2026 framework guidelines, matching candidates to targeted paths whether immediate healthcare screening, educational school funding, or trade training.</p>
+				</div>
+			</div>
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-rocket-takeoff fa-lg"></i>
+					</div>
+					<h5>Disbursal & Training</h5>
+					<p>Beneficiaries receive direct assistance during state-wide command tours, ranging from prescription lenses and clinical care to ₦50,000 micro grants alongside intensive business-literacy workshops.</p>
+				</div>
+			</div>
+
+			<!-- Step item -->
+			<div class="col-sm-6 col-lg-3">
+				<div class="card card-body bg-transparent text-center">
+					<!-- Icon -->
+					<div class="icon-lg bg-dark text-white rounded-circle mb-3 mx-auto">
+						<i class="bi bi-headset fa-lg"></i>
+					</div>
+					<h5>Monitoring & Impact</h5>
+					<p>We track business growth metrics, vocational output, and school enrollment data over time, ensuring our structural social protection framework successfully transitions families into long-term self-sufficiency.</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+<!-- =======================
+Work END -->
+
+<!-- =======================
+Video START -->
+<section class="bg-parallax position-relative h-400px h-xl-750px" data-jarallax-video="https://player.vimeo.com/video/1194730615?autoplay=1">
+	<div class="bg-overlay bg-dark opacity-3"></div>
+</section> 
+<!-- =======================
+Video END -->
+
+<!-- =======================
+Latest projects START -->
+<section class="pb-0">
+	<div class="container">
+		<!-- Title -->
+		<div class="row align-items-center g-4 mb-4 mb-sm-5">
+			<div class="col-md-6 col-lg-5">
+				<h2 class="mb-0">Upcoming Events</h2>
+			</div>
+			<div class="col-md-6 col-lg-4 ms-auto text-md-end">
+				<!-- <a href="portfolio-showcase.html" class="btn btn-lg btn-dark mb-0">View all projects</a> -->
+			</div>
+		</div>
+
+		<!-- Projects START -->
+		<div class="row g-4 g-md-5">
+			<div class="col-lg-6">
+				<div class="card bg-light p-3 p-sm-4 card-img-scale overflow-hidden">
+					<div class="card-img-scale-wrapper rounded-3">
+						<!-- Card Image -->              
+						<img src="assets/images/community/CI0A6397.jpg" class="img-scale" alt="portfolio-img">
+					</div>
+					<!-- Card body -->
+					<div class="card-body d-flex justify-content-between align-items-center px-0 pb-0">
+						<div class="me-3">
+							<h5 class="mb-0"><a href="#" class="heading-color stretched-link">POWA Launches Welfare Initiative for Police Families in Lagos</a></h5>							
+						</div>						
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-6">
+				<div class="card bg-light p-3 p-sm-4 card-img-scale overflow-hidden">
+					<div class="card-img-scale-wrapper rounded-3">
+						<!-- Card Image -->              
+						<img src="assets/images/community/PXL_20260429_152832163.RAW-01.COVER.jpg" class="img-scale" alt="portfolio-img">
+					</div>
+					<!-- Card body -->
+					<div class="card-body d-flex justify-content-between align-items-center px-0 pb-0">
+						<div class="me-3">
+							<h5 class="mb-0"><a href="#" class="heading-color stretched-link">Powa Cares Initiatives
+							</a></h5>						
+						</div>						
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Projects END -->
+	</div>
+</section>
+<!-- =======================
+Latest projects END -->
+
+
+
+<!-- =======================
+Testimonials START -->
+<section>
+	<div class="container">
+		<div class="row">
+			<!-- Title and content -->
+			<div class="col-lg-4">
+				<!-- Avatar Slider START -->
+				<div class="avatar avatar-xl mb-md-4">
+					<div class="swiper swiper-img-scale overflow-hidden" data-swiper-options='{
+						"effect": "fade",
+						"autoplay":{
+							"delay": 1500, 
+							"disableOnInteraction": false
+						}}'>
+						<div class="swiper-wrapper">
+							<!-- Slider item -->
+							<div class="swiper-slide">
+								<img class="avatar-img rounded-circle border border-2 border-white" src="assets/images/avatar/09.jpg" alt="avatar">
+							</div>
+
+							<!-- Slider item -->
+							<div class="swiper-slide">
+									<img class="avatar-img rounded-circle border border-2 border-white" src="assets/images/avatar/01.jpg" alt="avatar">
+							</div>
+
+							<!-- Slider item -->
+							<div class="swiper-slide">
+									<img class="avatar-img rounded-circle border border-2 border-white" src="assets/images/avatar/10.jpg" alt="avatar">
+							</div>
+
+							<!-- Slider item -->
+							<div class="swiper-slide">
+									<img class="avatar-img rounded-circle border border-2 border-white" src="assets/images/avatar/05.jpg" alt="avatar">
+							</div>
+						</div>
+					</div>
+				</div>	
+				<!-- Avatar Slider END -->
+
+				<h2 class="mb-lg-4">Hear from our Members</h2>
+				<p class="mb-5">Read what our satisfied members have to say about their experiences.</p>
+			</div>
+
+			<div class="col-lg-7 d-flex flex-column ms-auto">
+				<!-- Tab content START -->
+				<div class="tab-content mb-lg-3" id="pills-tabContent">
+					<!-- Tab content -->
+					<div class="tab-pane fade" id="testi-one" role="tabpanel" aria-labelledby="testi-one-tab" tabindex="0">
+						<!-- Icon -->
+						<div class="icon-lg bg-dark text-white rounded-circle mb-3 mb-lg-4"><i class="bi bi-quote fa-xl"></i></div>
+						<!-- Rating -->
+						<ul class="list-inline mb-3 mb-lg-4">
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+						</ul>
+						<h6 class="mb-2">"Transformed My Agency's Results"</h6>
+						<p class="heading-color">As an employer, the platform exceeded my expectations. We swiftly found top-tier talent for our company, thanks to the user-friendly interface and the ability to connect with candidates that perfectly fit our requirements.</p>
+					</div>
+
+					<!-- Tab content -->
+					<div class="tab-pane fade show active" id="testi-two" role="tabpanel" aria-labelledby="testi-two-tab" tabindex="0">
+						<!-- Icon -->
+						<div class="icon-lg bg-dark text-white rounded-circle mb-3 mb-lg-4"><i class="bi bi-quote fa-xl"></i></div>
+						<!-- Rating -->
+						<ul class="list-inline mb-3 mb-lg-4">
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+						</ul>
+						<h6 class="mb-2">"Transformed My Agency's Results"</h6>
+						<p class="heading-color">As an employer, the platform exceeded my expectations. We swiftly found top-tier talent for our company, thanks to the user-friendly interface and the ability to connect with candidates that perfectly fit our requirements.</p>
+					</div>
+
+					<!-- Tab content -->
+					<div class="tab-pane fade" id="testi-three" role="tabpanel" aria-labelledby="testi-three-tab" tabindex="0">
+						<!-- Icon -->
+						<div class="icon-lg bg-dark text-white rounded-circle mb-3 mb-lg-4"><i class="bi bi-quote fa-xl"></i></div>
+						<!-- Rating -->
+						<ul class="list-inline mb-3 mb-lg-4">
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+							<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+						</ul>
+						<h6 class="mb-2">"Transformed My Agency's Results"</h6>
+						<p class="heading-color">As an employer, the platform exceeded my expectations. We swiftly found top-tier talent for our company, thanks to the user-friendly interface and the ability to connect with candidates that perfectly fit our requirements.</p>
+					</div>
+				</div>
+				<!-- Tab content END -->
+
+				<!-- Tab START -->
+				<div class="nav nav-pills nav-pills-testimonial nav-justified mb-4 mb-lg-0" id="pills-tab" role="tablist">
+					<!-- Tab item -->
+					<div class="nav-item" role="presentation">
+						<div class="nav-link d-flex align-items-center text-start p-3" id="testi-one-tab" data-bs-toggle="pill" data-bs-target="#testi-one" role="tab" aria-controls="testi-one" aria-selected="true">
+							<!-- Avatar -->
+							<div class="avatar flex-shrink-0">
+								<img class="avatar-img rounded-circle" src="assets/images/avatar/04.jpg" alt="avatar">
+							</div>
+							<!-- Info -->
+							<div class="ms-2">
+								<h6 class="mb-0">Louis Ferguson</h6>
+								
+							</div>
+						</div>
+					</div>
+
+					<!-- Tab item -->
+					<div class="nav-item" role="presentation">
+						<div class="nav-link d-flex align-items-center text-start p-3 active" id="testi-two-tab" data-bs-toggle="pill" data-bs-target="#testi-two" role="tab" aria-controls="testi-two" aria-selected="false">
+							<!-- Avatar -->
+							<div class="avatar flex-shrink-0">
+								<img class="avatar-img rounded-circle" src="assets/images/avatar/05.jpg" alt="avatar">
+							</div>
+							<!-- Info -->
+							<div class="ms-2">
+								<h6 class="mb-0">Emma Watson</h6>
+								
+							</div>
+						</div>
+					</div>
+
+					<!-- Tab item -->
+					<div class="nav-item" role="presentation">
+						<div class="nav-link d-flex align-items-center text-start p-3" id="testi-three-tab" data-bs-toggle="pill" data-bs-target="#testi-three" role="tab" aria-controls="testi-three" aria-selected="false">
+							<!-- Avatar -->
+							<div class="avatar flex-shrink-0">
+								<img class="avatar-img rounded-circle" src="assets/images/avatar/06.jpg" alt="avatar">
+							</div>
+							<!-- Info -->
+							<div class="ms-2">
+								<h6 class="mb-0">Samuel Bishop</h6>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Tab END -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Testimonials END -->
+
+<!-- =======================
+CTA START -->
+<section class="position-relative z-index-2 pt-0">
+	<div class="container position-relative">
+		<div class="bg-dark rounded position-relative overflow-hidden p-4 p-sm-6"style="background:url(assets/images/bg/15.jpg) no-repeat; background-size:cover; background-position:center;">
+			<div class="row align-items-center position-relative">
+				<!-- Title and content -->
+				<div class="col-md-6 col-xl-7 mb-4 mb-xl-0">
+					<h2 class="text-white">Subscribe to our newsletter</h2>
+					<p class="text-white mb-0">We've always worked very hard to give our customers the best experience.</p>
+				</div>
+	
+				<!-- Input -->
+				<form class="col-md-6 col-xl-4 ms-xl-auto">
+					<input class="form-control mb-3" type="email" placeholder="Enter your email address">
+					<a href="#" class="btn btn-primary mb-0 d-grid">Subscribe now!</a>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+CTA END -->
+
+<!-- =======================
+Blog START -->
+<section class="pt-0">
+	<div class="container">
+
+		<!-- Title -->
+		<div class="inner-container-small text-center mb-4 mb-sm-5">
+			<h2 class="mb-0">Explore our latest News</h2>
+		</div>
+
+		<!-- Slider START -->
+		<div class="swiper" data-swiper-options='{
+			"loop": false,
+			"spaceBetween": 30,
+			"pagination":{
+				"el":".swiper-pagination"
+			},
+			"breakpoints": {
+				"576": {"slidesPerView": 1}, 
+				"768": {"slidesPerView": 2}, 
+				"992": {"slidesPerView": 3}
+			}}'>
+
+			<!-- Slider items -->
+			<div class="swiper-wrapper">
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="assets/images/Women/3S2A9984.JPG" class="card-img img-scale" alt="service image">							
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 15, 2026</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Digital Literacy & Youth Tech Initiatives</a></h6>
+							<p>Equipping the next generation of police youth with foundational software development and tech skills to position them for the changing workforce landscape.
+							</p>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									
+									<p class="mb-0">By Admin</p>
+								</div>
+								<!-- Button -->								
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="assets/images/community/CI0A6440.jpg" class="card-img img-scale" alt="service image">							
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 12, 2026</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Specialized Health Awareness & Screening Campaigns</a></h6>
+							<p>Hosting interactive seminars led by local health departments to offer clinical guidance, proper screening setups, and early preventive guidance.</p>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									
+									<p class="mb-0">By Admin</p>
+								</div>
+								<!-- Button -->								
+							</div>
+						</div>
+					</article>
+				</div>
+
+				<!-- Blog item -->
+				<div class="swiper-slide">
+					<article class="card card-img-scale border p-2 h-100">
+						<!-- Card image and badge -->
+						<div class="card-img-scale-wrapper position-relative rounded overflow-hidden">
+							<img src="assets/images/leadership/HEwteyabAAAFeRZ.jpeg" class="card-img img-scale" alt="service image">
+							<!-- Badge -->							
+						</div>
+
+						<!-- Card body -->
+						<div class="card-body d-flex flex-column px-2">
+							<div class="small mb-3"><i class="bi bi-calendar me-1"></i>April 08, 2026</div>
+							<h6 class="card-title mb-3"><a href="blog-single-v2.html" class="stretched-link">Mrs. Disu partners with First Lady’s Renewed Hope Initiative for barracks welfare
+							</a></h6>
+							<p>The Wife of the Inspector General of Police, Mrs. Mutiat Disu, has declared her resolve to leverage programmes under the Renewed Hope Initiative (RHI) to improve the welfare, healthcare, and empowerment of police officers’ wives across Nigeria.</p>
+							<!-- Author info and button -->
+							<div class="d-flex justify-content-between align-items-center mt-auto">
+								<!-- Author -->
+								<div class="d-flex align-items-center">
+									
+									<p class="mb-0">By Admin</p>
+								</div>
+								<!-- Button -->								
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<!-- Slider Pagination -->
+			<div class="swiper-pagination swiper-pagination-primary position-relative mt-4"></div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Blog END -->
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="bg-dark position-relative overflow-hidden pt-6" data-bs-theme="dark">
+
+	<div class="container position-relative mt-5">
+		<!-- Widgets -->
+		
+
+		<!-- Divider -->
+		<hr class="opacity-1 my-5 my-sm-6">
+
+		<!-- Contact detail -->
+		<div class="row g-4 align-items-center">
+			<!-- Title -->
+			<div class="col-xl-3 text-lg-center text-xl-start mb-4 mb-xl-0">
+				<h5 class="mb-1">Get in touch with us</h5>
+				<p class="mb-0">We look forward to hearing from you!</p>
+			</div>
+
+			<!-- Mobile number -->
+			<div class="col-sm-6 col-md-4 col-xl-3 d-flex justify-content-md-center">
+				<div class="position-relative d-flex align-items-center">
+					<div class="icon-lg bg-body rounded-circle flex-shrink-0">
+						<i class="bi bi-telephone heading-color"></i>
+					</div>
+					<div class="nav flex-column ps-3">
+						<div class="small text-body-secondary">Give us a call</div>
+						<p class="fw-semibold mt-1 mb-0"><a href="#" class="heading-color text-primary-hover stretched-link p-0">+23480 XXX XX XXX</a></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Email -->
+			<div class="col-sm-6 col-md-4 col-xl-3 d-flex justify-content-md-center">
+				<div class="position-relative d-flex align-items-center">
+					<div class="icon-lg bg-body rounded-circle flex-shrink-0">
+						<i class="bi bi-envelope heading-color"></i>
+					</div>
+					<div class="nav flex-column ps-3">
+						<div class="small text-body-secondary">Send us an email</div>
+						<p class="fw-semibold mt-1 mb-0"><a href="#" class="heading-color text-primary-hover stretched-link p-0">info@powa.org.ng</a></p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Address -->
+			<div class="col-sm-6 col-md-4 col-xl-3 d-flex justify-content-md-center">
+				<div class="position-relative d-flex align-items-center">
+					<div class="icon-lg bg-body rounded-circle flex-shrink-0">
+						<i class="bi bi-geo-alt heading-color"></i>
+					</div>
+					<div class="nav flex-column ps-3">
+						<div class="small text-body-secondary">Visit us in</div>
+						<p class="fw-semibold heading-color mt-1 mb-0">National Secretariat, State House Clinic Road, Asokoro, Abuja, FCT, Nigeria</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Divider -->
+		<hr class="opacity-1 mt-6 mb-0">
+
+		<!-- Bottom footer -->
+		<div class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4">
+			<!-- copyright text -->
+			<div class="text-body mb-3 mb-md-0"> Copyrights ©2026 <a href="https://www.powa.org.ng" class="text-body text-primary-hover">powa</a>. </div>
+
+			<!-- Social links -->
+			<ul class="list-inline mb-0">				
+				<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-fw fa-instagram lh-base"></i></a> </li>				
+				<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-light" href="#"><i class="fab fa-tiktok fa-fw lh-base"></i></a></li>				
+			</ul>
+		</div>
+		
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Vendors-->
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/jarallax/jarallax.min.js"></script>
+<script src="assets/vendor/jarallax/jarallax-video.min.js"></script>
+
+<!-- Theme Functions -->
+<script src="assets/js/functions.js"></script>
+
+</body>
+</html>
