@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+
 		<title>powa</title>
+	
 		<!-- Meta Tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,6 +81,7 @@
 		<!-- Plugins CSS -->
 		<link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+		<link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
 		<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
 		
 		<!-- Theme CSS -->
@@ -189,247 +192,281 @@
 <main>
 
 <!-- =======================
-Main hero START -->
-<section class="pt-8">
-	<div class="container">
-		<!-- Breadcrumb & title -->
-		<div class="bg-dark rounded-4 text-center position-relative overflow-hidden py-5">
+Main Banner START -->
+<section class="pt-7" >
+	<div class="container pt-3 pt-xl-5" style="margin-top: 50px;">
+		<!-- Slider START -->
+		<div class="swiper rounded" data-swiper-options='{
+			"effect": "fade",
+			"navigation":{
+				"nextEl":".swiper-button-next",
+				"prevEl":".swiper-button-prev"
+			},
+			"pagination":{
+				"el":".swiper-pagination",
+				"clickable":"true"
+			}}'>
 
-			<!-- Svg decoration -->
-			<figure class="position-absolute top-0 start-0 ms-n8">
-				<svg width="424" height="405" viewBox="0 0 424 405" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<ellipse cx="212" cy="202.5" rx="212" ry="202.5" fill="url(#paint0_linear_153_3831)"/>
-					<defs>
-					<linearGradient id="paint0_linear_153_3831" x1="212" y1="0" x2="212" y2="405" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0.5"/>
-					</linearGradient>
-					</defs>
-				</svg>
-			</figure>
-
-			<!-- SVG decoration -->
-			<figure class="position-absolute top-0 end-0 me-n8 mt-5">
-				<svg class="opacity-3" width="371" height="354" viewBox="0 0 371 354" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<ellipse cx="172.5" cy="176.5" rx="131.5" ry="125.5" fill="url(#paint0_linear_195_2)"/>
-					<ellipse cx="185.5" cy="177" rx="185.5" ry="177" fill="url(#paint1_linear_195_2)"/>
-					<defs>
-					<linearGradient id="paint0_linear_195_2" x1="172.5" y1="51" x2="172.5" y2="302" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.5"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
-					</linearGradient>
-					<linearGradient id="paint1_linear_195_2" x1="185.5" y1="0" x2="185.5" y2="354" gradientUnits="userSpaceOnUse">
-					<stop offset="0.0569271" stop-color="#D9D9D9" stop-opacity="0.2"/>
-					<stop offset="0.998202" stop-color="#D9D9D9" stop-opacity="0"/>
-					</linearGradient>
-					</defs>
-				</svg>
-			</figure>
-
-			<!-- Breadcrumb -->
-			<div class="d-flex justify-content-center position-relative z-index-9">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb breadcrumb-dots breadcrumb-dark mb-1">
-						<li class="breadcrumb-item"><a href="#">Home</a></li>
-						<li class="breadcrumb-item active" aria-current="page">gallery</li>
-					</ol>
-				</nav>
-			</div>
-			<!-- Title -->
-			<h1 class="h2 text-white">Gallery</h1>
-		</div>
-
-		<!-- Tabs -->
-		<div class="d-lg-flex align-items-center justify-content-center mt-6">
-			<h6 class="mb-lg-0 me-3">Browse by:</h6>
-			<div class="grid-menu" data-target=".filter-container">
-				<ul class="nav nav-pills nav-pills-primary-soft gap-2">
-					<li class="nav-item">
-						<a class="nav-link active" data-filter="*">All work</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-filter=".marketing">Leadership</a>          
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-filter=".design">Community Outreach</a>        
-					</li>
-					<li class="nav-item">
-							<a class="nav-link" data-filter=".business">Women Empowerment</a>        
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-filter=".brand">All Programs & Initiatives</a>        
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" data-filter=".ui">Powa Cares</a>        
-					</li>
-				</ul>
-			</div>
-		</div>
-
-		<!-- Portfolio item START -->
-		<div class="row g-4 filter-container mt-3" data-isotope='{"layoutMode": "masonry"}'>
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item marketing business brand">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/leadership/771A7108.jpg" alt="portfolio-img">  
-
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">leadership</a></h6>
-							<small class="text-white">Leadership</small>
-						</div>
-					</div>						
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item brand ui">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/Women/CI0A0654.jpg" alt="portfolio-img">  
-						
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="portfolio-case-studies-v2.html" class="text-white stretched-link">empowerment</a></h6>
-							<small class="text-white">empowerment</small>
+			<!-- Slider items -->
+			<div class="swiper-wrapper">
+				<!-- Slider item -->
+				<div class="swiper-slide">
+					<!-- Card item START -->
+					<div class="card overflow-hidden h-500px text-center rounded-0" style="background-image:url(assets/images/news/powa-news1.jpeg); background-position: center left; background-size: cover;">
+						<!-- Background dark overlay -->
+						<div class="bg-overlay bg-dark opacity-5"></div>
+						<!-- Card image overlay -->
+						<div class="card-img-overlay d-flex align-items-center p-2 p-sm-4"> 
+							<div class="w-100 my-auto">
+								<div class="row justify-content-center">
+									<div class="col-11 col-lg-9">
+										<!-- Badge -->
+										<a href="#" class="badge text-bg-dark mb-4">News</a>
+										<!-- Title -->
+										<h1 class="h2 mb-4"><a href="#" class="text-white text-primary-hover">International Widows' Day: POWA to Establish Mental Health Support Network for Police Widows</a></h1>
+										<ul class="nav nav-divider mb-0 justify-content-center small">
+											<li class="nav-item text-white"><a href="#" class="text-decoration-underline"><i class="bi bi-person me-2"></i>Admin</a></li>
+											<li class="nav-item text-white"><i class="bi bi-calendar me-2"></i>Jun 23, 2026</li>
+											<!-- <li class="nav-item text-white"><i class="bi bi-clock me-2"></i>4 min read</li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+					<!-- Card item END -->
 				</div>
-			</div>
 
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item ui">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/Women/CI0A0633.jpg" alt="portfolio-img"> 
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">empowerment/a></h6>
-							<small class="text-white">empowerment</small>
+				<!-- Slider item -->
+				<div class="swiper-slide">
+					<!-- Card item START -->
+					<div class="card overflow-hidden h-500px text-center rounded-0" style="background-image:url(assets/images/Women/3S2A9984.JPG); background-position: center left; background-size: cover;">
+						<!-- Background dark overlay -->
+						<div class="bg-overlay bg-dark opacity-5"></div>
+						<!-- Card image overlay -->
+						<div class="card-img-overlay d-flex align-items-center p-2 p-sm-4"> 
+							<div class="w-100 my-auto">
+								<div class="row justify-content-center">
+									<div class="col-11 col-lg-9">
+										<!-- Badge -->
+										<a href="#" class="badge text-bg-dark mb-4">News</a>
+										<!-- Title -->
+										<h1 class="h2 mb-4"><a href="#" class="text-white text-primary-hover">Digital Literacy & Youth Tech Initiatives</a></h1>
+										<ul class="nav nav-divider mb-0 justify-content-center small">
+											<li class="nav-item text-white"><a href="#" class="text-decoration-underline"><i class="bi bi-person me-2"></i>Admin</a></li>
+											<li class="nav-item text-white"><i class="bi bi-calendar me-2"></i>Apr 15, 2026</li>
+											<!-- <li class="nav-item text-white"><i class="bi bi-clock me-2"></i>4 min read</li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+					<!-- Card item END -->
 				</div>
-			</div>
 
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item design marketing">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/leadership/CI0A8439.jpg" alt="portfolio-img">
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">leadership</a></h6>
-							<small class="text-white">Leadership</small>
+				<!-- Slider item -->
+				<div class="swiper-slide">
+					<!-- Card item START -->
+					<div class="card overflow-hidden h-500px text-center rounded-0" style="background-image:url(assets/images/leadership/HEwteyabAAAFeRZ.jpeg); background-position: center left; background-size: cover;">
+						<!-- Background dark overlay -->
+						<div class="bg-overlay bg-dark opacity-5"></div>
+						<!-- Card image overlay -->
+						<div class="card-img-overlay d-flex align-items-center p-2 p-sm-4"> 
+							<div class="w-100 my-auto">
+								<div class="row justify-content-center">
+									<div class="col-11 col-lg-9">
+										<!-- Badge -->
+										<a href="#" class="badge text-bg-dark mb-4">News</a>
+										<!-- Title -->
+										<h1 class="h2 mb-4"><a href="#" class="text-white text-primary-hover">
+											Mrs. Disu partners with First Lady’s Renewed Hope Initiative for barracks welfare</a></h1>
+										<ul class="nav nav-divider mb-0 justify-content-center small">
+											<li class="nav-item text-white"><a href="#" class="text-decoration-underline"><i class="bi bi-person me-2"></i>Admin</a></li>
+											<li class="nav-item text-white"><i class="bi bi-calendar me-2"></i>Apr 8, 2026</li>
+											<!-- <li class="nav-item text-white"><i class="bi bi-clock me-2"></i>4 min read</li> -->
+										</ul>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
+					<!-- Card item END -->
 				</div>
+			</div>	
+
+			<!-- Slider Pagination -->
+			<div class="swiper-pagination swiper-pagination-white mb-3"></div>
+
+			<!-- Add pagination and navigation elements here -->
+			<div class="d-flex justify-content-between position-absolute top-50 start-0 w-100 px-1 px-sm-3">
+				<a href="#" class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-prev"><i class="bi bi-arrow-left"></i></a>
+				<a href="#" class="btn btn-dark btn-icon rounded-circle mb-0 swiper-button-next"><i class="bi bi-arrow-right"></i></a>
 			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item business design brand">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/community/PXL_20260428_094046481.RAW-01.MP.COVER.jpg" alt="portfolio-img">  	
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">commmunity</a></h6>
-							<small class="text-white">community</small>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item business design brand">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/community/CI0A6432.jpg" alt="portfolio-img">  	
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">community</a></h6>
-							<small class="text-white">community</small>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item business design">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/community/PXL_20260428_105006720.RAW-01.MP.COVER.jpg" alt="portfolio-img"> 
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">community</a></h6>
-							<small class="text-white">community</small>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item business design">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/community/CI0A6397.jpg" alt="portfolio-img"> 
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="#" class="text-white stretched-link">Community</a></h6>
-							<small class="text-white">Community</small>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<!-- Item -->
-			<div class="col-sm-6 col-lg-4 grid-item ui">
-				<div class="card card-element-hover card-metro-hover">
-					<!-- Card Image -->              
-					<img src="assets/images/Women/PXL_20260309_091856065.RAW-01.COVER.jpg" alt="portfolio-img"> 
-					
-					<!-- Card elements -->
-					<div class="card-img-overlay hover-element d-flex"> 
-						<!-- Info -->
-						<div class="card-text mt-auto">
-							<h6 class="mb-0"><a href="portfolio-case-studies-v1.html" class="text-white stretched-link">empowerment</a></h6>
-							<small class="text-white">empowerment</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- Portfolio item END -->
-
-		<!-- button -->
-		
-
-	</div>	
+		</div>				
+		<!-- Slider END -->
+	</div>
 </section>
 <!-- =======================
-Main hero END -->
+Main Banner END -->
+
+<!-- =======================
+Blog list and sidebar START -->
+<section class="pt-0">
+	<div class="container">
+		<!-- Title & Tab -->
+		<div class="d-lg-flex justify-content-between align-items-center">
+			<!-- Title -->
+			<h4 class="mb-3 mb-lg-0">Our News</h4>
+			<!-- Tabs -->
+			<!-- <ul class="nav nav-pills gap-1 nav-pills-light">
+				<li class="nav-item">
+					<a class="nav-link active">All blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">Marketing</a>          
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">Design</a>        
+				</li>
+				<li class="nav-item">
+						<a class="nav-link">Lifestyle</a>        
+				</li>
+				<li class="nav-item">
+					<a class="nav-link">Technology</a>        
+				</li>
+			</ul> -->
+	 	</div>
+
+		<!-- Blog grid -->
+		<div class="row g-4 g-sm-5 g-xl-7 mt-0">			
+			<div class="col-md-6 col-lg-4">
+				<article class="card bg-transparent h-100 p-0">
+					<!-- Badge -->
+					<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">News</div>
+
+					<!-- Card image -->
+					<img src="assets/images/Women/3S2A9984.JPG" class="card-img" alt="Blog-img">
+
+					<!-- Card Body -->
+					<div class="card-body px-2 pb-4">
+						<!-- Title -->
+						<h6 class="card-title mb-2"><a href="#">Digital Literacy & Youth Tech Initiatives</a></h6>
+						<p class="small mb-0">Equipping the next generation of police youth with foundational software development and tech skills to position them for the changing workforce landscape.</p>
+					</div>
+					
+					<!-- Card footer -->
+					<div class="card-footer bg-transparent d-flex justify-content-between px-2 py-0">
+						<span class="heading-color fw-semibold mb-0">Admin</span>
+						<a class="icon-link icon-link-hover stretched-link" href="#">Read more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</article>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<article class="card bg-transparent h-100 p-0">
+					<!-- Badge -->
+					<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">News</div>
+
+					<!-- Card image -->
+					<img src="assets/images/community/CI0A6440.jpg" class="card-img" alt="Blog-img">
+
+					<!-- Card Body -->
+					<div class="card-body px-2 pb-4">
+						<!-- Title -->
+						<h6 class="card-title mb-2"><a href="#">Specialized Health Awareness & Screening Campaigns</a></h6>
+						<p class="small mb-0">Hosting interactive seminars led by local health departments to offer clinical guidance, proper screening setups, and early preventive guidance.</p>
+					</div>
+					
+					<!-- Card footer -->
+					<div class="card-footer bg-transparent d-flex justify-content-between px-2 py-0">
+						<span class="heading-color fw-semibold mb-0">Admin</span>
+						<a class="icon-link icon-link-hover stretched-link" href="#">Read more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</article>
+			</div>
+
+			<!-- Item -->
+			
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<article class="card bg-transparent h-100 p-0">
+					<!-- Badge -->
+					<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">News</div>
+
+					<!-- Card image -->
+					<img src="assets/images/leadership/HEwteyabAAAFeRZ.jpeg" class="card-img" alt="Blog-img">
+
+					<!-- Card Body -->
+					<div class="card-body px-2 pb-4">
+						<!-- Title -->
+						<h6 class="card-title mb-2"><a href="#">Mrs. Disu partners with First Lady’s Renewed Hope Initiative for barracks welfare</a></h6>
+						<p class="small mb-0">
+							The Wife of the Inspector General of Police, Mrs. Mutiat Disu, has declared her resolve to leverage programmes under the Renewed Hope Initiative (RHI) to improve the welfare, healthcare, and empowerment of police officers’ wives across Nigeria.</p>
+					</div>
+					
+					<!-- Card footer -->
+					<div class="card-footer bg-transparent d-flex justify-content-between px-2 py-0">
+						<span class="heading-color fw-semibold mb-0">Admin</span>
+						<a class="icon-link icon-link-hover stretched-link" href="#">Read more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</article>
+			</div>
+
+			<!-- Item -->
+			<div class="col-md-6 col-lg-4">
+				<article class="card bg-transparent h-100 p-0">
+					<!-- Badge -->
+					<div class="badge text-bg-dark position-absolute top-0 start-0 m-3">News</div>
+
+					<!-- Card image -->
+					<img src="assets/images/news/powa-news1.jpeg" class="card-img" alt="Blog-img">
+
+					<!-- Card Body -->
+					<div class="card-body px-2 pb-4">
+						<!-- Title -->
+						<h6 class="card-title mb-2"><a href="#">International Widows' Day: POWA to Establish Mental Health Support Network for Police Widows</a></h6>
+						<p class="small mb-0">The Police Officers' Wives Association (POWA) is set to establish a sustainable mental health and psychosocial support system for police widows, with National President, Mrs. Olufunmilola Disu, declaring that the pain of losing a spouse goes beyond financial hardship and must no longer be ignored.</p>
+					</div>
+					
+					<!-- Card footer -->
+					<div class="card-footer bg-transparent d-flex justify-content-between px-2 py-0">
+						<span class="heading-color fw-semibold mb-0">Admin</span>
+						<a class="icon-link icon-link-hover stretched-link" href="#">Read more<i class="bi bi-arrow-right"></i> </a>
+					</div>
+				</article>
+			</div>
+	  </div>
+
+		<!-- Pagination START -->
+		<!-- <div class="row mt-7">
+			<div class="col-12 mx-auto">
+				<ul class="pagination pagination-primary-soft d-flex justify-content-center mb-0">
+	        <li>
+						<ul class="list-unstyled">
+							<li class="page-item disabled">
+								<a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+							</li>
+							<li class="page-item active"><a class="page-link" href="#">1</a></li>
+							<li class="page-item"><a class="page-link" href="#">2</a></li>
+							<li class="page-item"><a class="page-link" href="#">..</a></li>
+							<li class="page-item"><a class="page-link" href="#">22</a></li>
+							<li class="page-item">
+								<a class="page-link" href="#">Next</a>
+							</li>
+						</ul>
+					</li>
+	      </ul>
+			</div>
+		</div> -->
+		<!-- Pagination END -->
+
+	</div>
+</section>
+<!-- =======================
+Blog list and sidebar END -->
 
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
@@ -522,8 +559,7 @@ Footer END -->
 <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
 <!--Vendors-->
-<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/imagesLoaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
 <!-- Theme Functions -->
 <script src="assets/js/functions.js"></script>
